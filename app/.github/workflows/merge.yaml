@@ -3,6 +3,8 @@ name: merge CI
 on:
   push:
     branches: ["main"]
+  pull:
+    branches: ["main"]
 
 jobs:
   build:
@@ -19,4 +21,4 @@ jobs:
           npm install
           npm test
       - name: Run build
-          npm run build
+        run: npm run build
