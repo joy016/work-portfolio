@@ -6,11 +6,6 @@ import React from "react";
 
 const navItems = [
   {
-    id: "section1",
-    href: "#section1",
-    label: "About",
-  },
-  {
     id: "section2",
     href: "#section2",
     label: "Skills",
@@ -18,7 +13,7 @@ const navItems = [
   {
     id: "section3",
     href: "#section3",
-    label: "Projects",
+    label: "Work Experience",
   },
   {
     id: "section4",
