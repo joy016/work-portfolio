@@ -1,12 +1,13 @@
 "use client";
 
-import { Avatar, Box, Flex, IconButton } from "@chakra-ui/react";
+import { Avatar, Box, Flex } from "@chakra-ui/react";
 import {
   AnimatePresence,
   motion,
   useReducedMotion,
   useScroll,
   useTransform,
+  Variants,
 } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -105,7 +106,7 @@ const Header = () => {
   };
 
   // Animation variants
-  const navContainerVariants = {
+  const navContainerVariants: Variants = {
     hidden: {},
     visible: {
       transition: {
@@ -115,7 +116,7 @@ const Header = () => {
     },
   };
 
-  const navItemVariants = {
+  const navItemVariants: Variants = {
     hidden: { opacity: 0, y: prefersReducedMotion ? 0 : -12 },
     visible: {
       opacity: 1,
@@ -124,7 +125,7 @@ const Header = () => {
     },
   };
 
-  const logoVariants = {
+  const logoVariants: Variants = {
     hidden: {
       opacity: 0,
       scale: prefersReducedMotion ? 1 : 0.7,
@@ -139,7 +140,7 @@ const Header = () => {
   };
 
   // Mobile drawer variants
-  const drawerVariants = {
+  const drawerVariants: Variants = {
     hidden: {
       opacity: 0,
       y: prefersReducedMotion ? 0 : -16,
@@ -159,7 +160,7 @@ const Header = () => {
     },
   };
 
-  const mobileNavItemVariants = {
+  const mobileNavItemVariants: Variants = {
     hidden: { opacity: 0, x: prefersReducedMotion ? 0 : -20 },
     visible: (i: number) => ({
       opacity: 1,
