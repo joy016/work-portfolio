@@ -10,7 +10,7 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { motion, useInView, useReducedMotion, Variants } from "framer-motion";
 import { useRef, useState } from "react";
 import { RiMailLine } from "react-icons/ri";
 
@@ -45,7 +45,7 @@ const Contact = () => {
     },
   };
 
-  const fadeUpVariants = {
+  const fadeUpVariants: Variants = {
     hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 28 },
     visible: {
       opacity: 1,
@@ -54,7 +54,7 @@ const Contact = () => {
     },
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 48, scale: 0.97 },
     visible: {
       opacity: 1,

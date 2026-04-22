@@ -1,6 +1,4 @@
-import { Box, Center, Flex, IconButton, Text } from "@chakra-ui/react";
-import React from "react";
-import { LuSearch } from "react-icons/lu";
+import { Center, Flex, IconButton, Text } from "@chakra-ui/react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 

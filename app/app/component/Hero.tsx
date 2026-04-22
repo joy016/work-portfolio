@@ -9,7 +9,7 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const MotionBox = motion.create(Box);
@@ -43,7 +43,7 @@ const Hero = () => {
     },
   };
 
-  const fadeUpVariants = {
+  const fadeUpVariants: Variants = {
     hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 30 },
     visible: {
       opacity: 1,
@@ -52,7 +52,7 @@ const Hero = () => {
     },
   };
 
-  const imageVariants = {
+  const imageVariants: Variants = {
     hidden: { opacity: 0, x: prefersReducedMotion ? 0 : 60, scale: 0.95 },
     visible: {
       opacity: 1,
@@ -62,7 +62,7 @@ const Hero = () => {
     },
   };
 
-  const imageMobileVariants = {
+  const imageMobileVariants: Variants = {
     hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 40, scale: 0.95 },
     visible: {
       opacity: 1,

@@ -1,7 +1,7 @@
 "use client";
 
 import { Badge, Box, Card, Flex, Heading, Image, Text } from "@chakra-ui/react";
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { motion, useInView, useReducedMotion, Variants } from "framer-motion";
 import { useRef } from "react";
 
 const MotionBox = motion.create(Box);
@@ -91,7 +91,7 @@ const ProjectCard = ({
   const prefersReducedMotion = useReducedMotion();
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: {
       opacity: 0,
       y: prefersReducedMotion ? 0 : 40,

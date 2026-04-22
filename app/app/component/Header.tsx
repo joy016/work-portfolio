@@ -188,7 +188,6 @@ const Header = () => {
           isScrolled ? "rgba(226, 236, 222, 0.88)" : "rgba(226, 236, 222, 0.6)"
         }
         backdropFilter={isScrolled ? "blur(14px)" : "blur(4px)"}
-        transition="background-color 0.3s ease"
         initial="hidden"
         animate="visible"
       >

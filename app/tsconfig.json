@@ -30,8 +30,7 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "app/component/Header.tsx",
-    "app/component/Footer.tsx",
-    "app/component/About.jsx"
+    "app/component/Footer.tsx"
   ],
   "exclude": ["node_modules"]
 }
