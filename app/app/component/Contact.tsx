@@ -13,6 +13,7 @@ import {
 import { motion, useInView, useReducedMotion, Variants } from "framer-motion";
 import { useRef, useState } from "react";
 import { RiMailLine } from "react-icons/ri";
+import emailjs from "@emailjs/browser";
 
 const MotionBox = motion.create(Box);
 
@@ -29,10 +30,26 @@ const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [focused, setFocused] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.MouseEvent) => {
+  const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
     if (!formState.name || !formState.email || !formState.message) return;
-    setSubmitted(true);
+
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+      );
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+    }
   };
 
   const containerVariants = {
