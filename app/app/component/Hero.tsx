@@ -124,8 +124,6 @@ const Hero = () => {
               fontSize="106px"
               letterSpacing="6px"
               color="black"
-              _visited={{ color: "black" }}
-              _hover={{ color: "black" }}
             >
               Hi I am
             </MotionHeading>
@@ -162,8 +160,6 @@ const Hero = () => {
               textAlign="center"
               fontWeight="medium"
               color="black"
-              _visited={{ color: "black" }}
-              _hover={{ color: "black" }}
             >
               Front End Developer
             </MotionHeading>
