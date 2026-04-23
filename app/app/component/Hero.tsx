@@ -123,6 +123,9 @@ const Hero = () => {
               variants={fadeUpVariants}
               fontSize="106px"
               letterSpacing="6px"
+              color="black"
+              _visited={{ color: "black" }}
+              _hover={{ color: "black" }}
             >
               Hi I am
             </MotionHeading>
@@ -158,6 +161,9 @@ const Hero = () => {
               fontSize="23px"
               textAlign="center"
               fontWeight="medium"
+              color="black"
+              _visited={{ color: "black" }}
+              _hover={{ color: "black" }}
             >
               Front End Developer
             </MotionHeading>
@@ -169,6 +175,9 @@ const Hero = () => {
               fontFamily="var(--font-body)"
               letterSpacing="2px"
               fontSize="18px"
+              color="black"
+              _visited={{ color: "black" }}
+              _hover={{ color: "black" }}
             >
               React.js-focused software engineer with 3+ years of experience who
               enjoys turning ideas into clean, user-friendly interfaces.

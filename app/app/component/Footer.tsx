@@ -28,6 +28,7 @@ const Footer = () => {
       borderStyle={"solid"}
       borderColor={"#AD49E1"}
       borderWidth={"1px 0"}
+      backgroundColor={"#ffffff"}
       gap={"4"}
     >
       <Text
