@@ -1,20 +1,22 @@
-import { Center, Flex, IconButton, Text } from "@chakra-ui/react";
+import { Box, Center, Flex, IconButton, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { CiLocationOn } from "react-icons/ci";
 
 const icons = [
   {
-    link: "#",
+    link: "https://www.linkedin.com/in/edijoy-lejas-28b02b1aa",
     label: "linked in",
     icon: FaLinkedin,
   },
   {
-    link: "#",
+    link: "https://github.com/joy016/work-portfolio",
     label: "github",
     icon: FaGithub,
   },
   {
-    link: "#",
+    link: "mailto:jhoylejas@gmail.com",
     label: "email",
     icon: MdEmail,
   },
@@ -22,38 +24,84 @@ const icons = [
 
 const Footer = () => {
   return (
-    <Center
-      height={"7rem"}
+    <Box
+      height={"auto"}
       flexDirection={"column"}
       borderStyle={"solid"}
       borderColor={"#AD49E1"}
       borderWidth={"1px 0"}
-      gap={"4"}
+      padding={{ sm: "10px 10px", lg: "1rem 1rem" }}
     >
-      <Text
-        fontFamily={"var(--font-body)"}
-        letterSpacing={"1px"}
-        color={"#AD49E1"}
-        fontSize={"18px"}
-      >
-        Develop and Design by Edijoy Lejas @2026
-      </Text>
-      <Flex gap={"2"}>
-        {icons.map((item) => {
-          const Icon = item.icon;
-          return (
-            <IconButton
-              key={item.label}
-              aria-label="Search database"
-              size={"xl"}
-              variant={"outline"}
-            >
-              <Icon />
-            </IconButton>
-          );
-        })}
-      </Flex>
-    </Center>
+      <Box>
+        <Text
+          letterSpacing={"1px"}
+          fontFamily={"var(--font-body)"}
+          fontWeight={"bold"}
+        >
+          CONTACT
+        </Text>
+        <Text
+          display={"flex"}
+          alignItems={"center"}
+          gap={"2px"}
+          color={"#AD49E1"}
+          fontFamily={"var(--font-body)"}
+          letterSpacing={"1px"}
+        >
+          <CiLocationOn />
+          Philippines
+        </Text>
+        <Text
+          display={"flex"}
+          alignItems={"center"}
+          gap={"2px"}
+          color={"#AD49E1"}
+          fontFamily={"var(--font-body)"}
+          letterSpacing={"1px"}
+        >
+          <MdEmail />
+          jhoylejas@gmail.com
+        </Text>
+      </Box>
+      <Center gap={"4"} flexDirection={"column"}>
+        <Box>
+          <Text
+            fontFamily={"var(--font-body)"}
+            letterSpacing={"1px"}
+            color={"#AD49E1"}
+            fontSize={"18px"}
+          >
+            Develop and Design by Edijoy Lejas @2026
+          </Text>
+          <Text
+            fontFamily={"var(--font-body)"}
+            letterSpacing={"1px"}
+            color={"#AD49E1"}
+            fontSize={"15px"}
+            textAlign={"center"}
+          >
+            Built using Next js and Chakra UI
+          </Text>
+        </Box>
+
+        <Flex gap={"2"}>
+          {icons.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Link href={item.link} key={item.label} target="_blank">
+                <IconButton
+                  aria-label="Search database"
+                  size={"xl"}
+                  variant={"outline"}
+                >
+                  <Icon />
+                </IconButton>
+              </Link>
+            );
+          })}
+        </Flex>
+      </Center>
+    </Box>
   );
 };
 

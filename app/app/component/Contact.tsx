@@ -17,6 +17,10 @@ import emailjs from "@emailjs/browser";
 
 const MotionBox = motion.create(Box);
 
+const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
 const Contact = () => {
   const prefersReducedMotion = useReducedMotion();
   const sectionRef = useRef(null);
@@ -29,26 +33,30 @@ const Contact = () => {
   });
   const [submitted, setSubmitted] = useState(false);
   const [focused, setFocused] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
     if (!formState.name || !formState.email || !formState.message) return;
 
     try {
+      setLoading(true);
       await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        serviceId!,
+        templateId!,
         {
           name: formState.name,
           email: formState.email,
           message: formState.message,
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+        publicKey!,
       );
 
       setSubmitted(true);
     } catch (error) {
       console.error("EmailJS Error:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -374,6 +382,9 @@ const Contact = () => {
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 <Button
+                  loading={loading}
+                  loadingText={"Sending message"}
+                  spinnerPlacement="start"
                   w="100%"
                   size="lg"
                   fontFamily="var(--font-body)"
