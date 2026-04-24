@@ -24,84 +24,51 @@ const icons = [
 
 const Footer = () => {
   return (
-    <Box
-      height={"auto"}
+    <Center
+      gap={"4"}
       flexDirection={"column"}
       borderStyle={"solid"}
       borderColor={"#AD49E1"}
       borderWidth={"1px 0"}
-      padding={{ sm: "10px 10px", lg: "1rem 1rem" }}
+      padding={"1rem 0"}
     >
       <Box>
         <Text
-          letterSpacing={"1px"}
           fontFamily={"var(--font-body)"}
-          fontWeight={"bold"}
+          letterSpacing={"1px"}
+          color={"#AD49E1"}
+          fontSize={"18px"}
         >
-          CONTACT
+          Develop and Design by Edijoy Lejas @2026
         </Text>
         <Text
-          display={"flex"}
-          alignItems={"center"}
-          gap={"2px"}
-          color={"#AD49E1"}
           fontFamily={"var(--font-body)"}
           letterSpacing={"1px"}
-        >
-          <CiLocationOn />
-          Philippines
-        </Text>
-        <Text
-          display={"flex"}
-          alignItems={"center"}
-          gap={"2px"}
           color={"#AD49E1"}
-          fontFamily={"var(--font-body)"}
-          letterSpacing={"1px"}
+          fontSize={"15px"}
+          textAlign={"center"}
         >
-          <MdEmail />
-          jhoylejas@gmail.com
+          Built using Next js and Chakra UI
         </Text>
       </Box>
-      <Center gap={"4"} flexDirection={"column"}>
-        <Box>
-          <Text
-            fontFamily={"var(--font-body)"}
-            letterSpacing={"1px"}
-            color={"#AD49E1"}
-            fontSize={"18px"}
-          >
-            Develop and Design by Edijoy Lejas @2026
-          </Text>
-          <Text
-            fontFamily={"var(--font-body)"}
-            letterSpacing={"1px"}
-            color={"#AD49E1"}
-            fontSize={"15px"}
-            textAlign={"center"}
-          >
-            Built using Next js and Chakra UI
-          </Text>
-        </Box>
 
-        <Flex gap={"2"}>
-          {icons.map((item) => {
-            const Icon = item.icon;
-            return (
-              <Link href={item.link} key={item.label} target="_blank">
-                <IconButton
-                  aria-label="Search database"
-                  size={"xl"}
-                  variant={"outline"}
-                >
-                  <Icon />
-                </IconButton>
-              </Link>
-            );
-          })}
-        </Flex>
-      </Center>
-    </Box>
+      <Flex gap={"2"}>
+        {icons.map((item) => {
+          const Icon = item.icon;
+          return (
+            <Link href={item.link} key={item.label} target="_blank">
+              <IconButton
+                aria-label="Search database"
+                size={"xl"}
+                variant={"outline"}
+              >
+                <Icon />
+              </IconButton>
+            </Link>
+          );
+        })}
+      </Flex>
+    </Center>
   );
 };
 
