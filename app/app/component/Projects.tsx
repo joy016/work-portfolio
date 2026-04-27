@@ -11,7 +11,7 @@ const workExperience = [
   {
     key: 12,
     imgSrc: "itemInventory.png",
-    companyName: "Marlow Navigation Phils",
+    companyName: "United Marine Training Center",
     project: "Inventory System",
     position: "Software Engineer",
     workDesc: `I participated in building a system used by our partner suppliers. I built an Item Inventory module where users can track stocks of available items, add stocks, search stocks through item batch, and add or delete a batch.`,
@@ -28,7 +28,7 @@ const workExperience = [
   {
     key: 1,
     imgSrc: "balanghai.png",
-    companyName: "Marlow Navigation Phils.",
+    companyName: "United Marine Training Center",
     project: "Employee Portal",
     position: "Software Engineer / Frontend focused",
     workDesc: `A software engineer focused on front-end development, working across multiple modules used by different departments, including visa ordering, visa administration, visa supplier management, loan ordering, and loan administration. Also participated in peer code reviews and collaborated with Business Analysts to clarify and validate module requirements.`,
